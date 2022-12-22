@@ -180,11 +180,17 @@ if (email.length==0){
     returnval = false;
 }
 
-
-if (isNaN(phone)||phone.length != 10) {
+var phone = document.forms['myForm']["fphone"].value;
+if (phone.length != 10) {
             seterror("phone", "Please enter valid phone number!");
             returnval = false;
         }
+       
+        if (isNaN(phone)) {
+            seterror("phone", "Please enter valid phone number!");
+            returnval = false;
+        }
+
 
 var password = document.forms['myForm']["fpass"].value;
 if (password.length < 6){
